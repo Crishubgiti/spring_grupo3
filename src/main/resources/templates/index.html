@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link
+	href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+	rel="stylesheet">
+<title th:text="${home}"></title>
+</head>
+<body>
+<header>
+    <a href="#" class="logo"><i class="ri-gitlab-line"></i><span>ShopLAB</span>
+    <ul class="navbar" >
+        <a href="/">home</a>
+      <!--  <a href="#about">about</a>-->
+        <a href="#products">productos</a>
+        <a href="#review">review</a>
+        <a href="nosotros">Nosotros</a>
+        <a sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Cerrar sesión</a></a>
+    </ul>
+</header>
+
+<section class="home" id="home">
+    <div class="content">
+        <h3 th:text="${uno}"></h3>
+        <span> <b th:text="${dos}"> </b> </span>
+        <p>Solo en Shop Lab encontrarás los verdaderos Preciazos. En tu primera compra Aprovecha los descuentos de hasta un 50% de descuento. En Shop Lab online encontrarás un amplio catálogo de productos</p>
+        <a href="#" class="btn">Compra ahora</a>
+    </div> 
+</section>
+<!--
+<section class="products" id="products" >
+    <h1 class="heading"> Ultimos <span>productos</span> </h1>
+    <div class="box-container">
+        <div class="box">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="images/img-1.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>flower pot</h3>
+                <div class="price"> $13.99 <span>$15.99</span> </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount">-5%</span>
+            <div class="image">
+                <img src="images/img-3.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>flower pot</h3>
+                <div class="price"> $12.99 <span>$15.99</span> </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount">-20%</span>
+            <div class="image">
+                <img src="images/img-4.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>flower pot</h3>
+                <div class="price"> $12.99 <span>$15.99</span> </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount">-17%</span>
+            <div class="image">
+                <img src="images/img-5.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>flower pot</h3>
+                <div class="price"> $12.99 <span>$15.99</span> </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount">-3%</span>
+            <div class="image">
+                <img src="images/img-6.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>flower pot</h3>
+                <div class="price"> $12.99 <span>$15.99</span> </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount">-18%</span>
+            <div class="image">
+                <img src="images/img-7.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>flower pot</h3>
+                <div class="price"> $12.99 <span>$15.99</span> </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="images/img-8.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>flower pot</h3>
+                <div class="price"> $12.99 <span>$15.99</span> </div>
+            </div>
+        </div>
+    </div>
+</section>-->
+
+<section class="icons-container" >
+
+    <div class="icons">
+        <img src="img/icon-1.png" alt="">
+        <div class="info">
+            <h3>Delivery Gratis</h3>
+            <span>para compras mayores a $100</span>
+        </div>
+    </div>
+
+    <div class="icons">
+        <img src="img/icon-2.png" alt="">
+        <div class="info">
+            <h3>10 dias habiles para</h3>
+            <span>garantía de reembolso</span>
+        </div>
+    </div>
+
+    <div class="icons">
+        <img src="img/icon-4.png" alt="">
+        <div class="info">
+            <h3>compra seguro</h3>
+            <span>protegido por paypal</span>
+        </div>
+    </div>
+   
+</section>
+<section class="review" id="review">
+
+<h1 class="heading">Reseña del<span> cliente</span> </h1>
+
+<div class="box-container">
+
+    <div class="box">
+        <div class="stars">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti asperiores laboriosam praesentium enim maiores? Ad repellat voluptates alias facere repudiandae dolor accusamus enim ut odit, aliquam nesciunt eaque nulla dignissimos.</p>
+        <div class="user">
+            <img src="img/pic-1.png" alt="">
+            <div class="user-info">
+                <h3>paola</h3>
+                <span>cliente feliz</span>
+            </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+    </div>
+
+    <div class="box">
+        <div class="stars">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-half-line"></i>
+            <i class="ri-star-line"></i>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti asperiores laboriosam praesentium enim maiores? Ad repellat voluptates alias facere repudiandae dolor accusamus enim ut odit, aliquam nesciunt eaque nulla dignissimos.</p>
+
+        <div class="user">
+            <img src="img/pic-2.png" alt="">
+            <div class="user-info">
+                <h3>Laura</h3>
+                <span>cliente satisfecho</span>
+            </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+    </div>
+
+    <div class="box">
+        <div class="stars">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-line"></i>
+            <i class="ri-star-line"></i>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti asperiores laboriosam praesentium enim maiores? Ad repellat voluptates alias facere repudiandae dolor accusamus enim ut odit, aliquam nesciunt eaque nulla dignissimos.</p>
+        <div class="user">
+            <img src="img/pic-3.png" alt="">
+            <div class="user-info">
+                <h3>Paola </h3>
+                <span>cliente conforme</span>
+            </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+    </div>
+
+</div>
+    
+</section>
+
+<!-- review section ends -->
+
+<br>
+<br><br><br><br>
+
+<section class="footer" th:fragment="footeer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Shop Labs</h3>
+            <a href="#">Home</a>
+            <a href="#">Productos</a>
+            <a href="nosotros">Nosotros</a>
+        </div>
+        <div class="box">
+            <h3>Localicaciones</h3>
+            <a href="#">Peru</a>
+            <a href="#">Lima</a>
+            <a href="#">Arequipa</a>
+            <a href="#">Cuzco</a>
+        </div>
+        <div class="box">
+            <h3>Datos de contacto</h3>
+            <a href="#">+5427--9934</a>
+            <a href="#">grupo3@gmail.com</a>
+            <a href="#">peru, arequipa- 948860423</a>
+            <img th:src="@{/img/payment.png}" >
+        </div>
+        
+    </div>
+
+<div><!-- 
+<h6>
+    Bienvenido <span sec:authentication="principal.username"></span>
+</h6>
+<div class="cerrar_sesion">
+    <ul >
+        <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}"
+            class="btn btn-dark">Cerrar sesión</a></li>
+    </ul>
+</div> -->
+</div>
+    <div class="credit">©2022<span><b>GRUPO_3</b> </span>| todos los derechos reservados</div>
+       <a style="font-size:40px">MANEJO DE PLANTILLAS CON THYMELEAF en el footer</a><!-- hol ga -->
+</section> 
+	<script type="text/javascript" th:src="@{/js/script.js}"></script>
+</body>
+</html>

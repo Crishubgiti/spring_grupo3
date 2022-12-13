@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link
+	href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+	rel="stylesheet">
+<title th:text="${titulo}"></title>
+</head>
+<body>
+    <!-- header section starts  -->
+
+<header style="position:initial">
+    <a href="/" class="logo"><i class="ri-gitlab-line"></i><span>ShopLAB</span>
+    <nav class="navbar" >
+        <a href="/">home</a>
+      <!--  <a href="#about">about</a>-->
+        <a href="#products">productos</a>
+        <a href="#review">review</a>
+        <a href="#">nosotros</a>
+    </nav>
+</header>
+
+<section class="about" id="about" >
+
+    <h1 class="heading"> <span> Acerca de </span> Nosotros </h1>
+
+    <div class="row">
+<!---->
+        <div class="video-container">
+            <video src="img/videoPr.mp4" loop muted="" controls></video>
+            <h3 th:text="${mensaje"></h3>
+        </div>
+
+        <div class="content">
+            <h3 >¿Porque elejirnos?</h3>
+            <p>Tienes 7 días completos para devolver tu artículo a nosotros. En caso el producto tenga falla de fábrica, se rompe o viene incompleto, simplemente nos lo devuelve y le reembolsaremos con gusto todo el dinero.</p>
+            <p>Sabemos que amarás todo lo que nos compras. Si no está satisfecho por algún motivo, háganoslo saber y haremos todo lo posible para corregir las cosas y seguir mejorando para ti.</p>
+            <p>Las devoluciones son fáciles. Simplemente contáctenos para obtener un número de devolución y envíe su artículo a nuestro centro de devoluciones para un procesamiento rápido. ¡Le conseguiremos un reemplazo o reembolso en un instante!</p>
+            <p>Tu pedido en Shop Lab.peru es 100% seguro. Para que pueda estar tranquilo, sus datos personales nunca se comparten, venden o alquilan a nadie.</p>
+            <a href="#" class="btn">leer mas</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends --> 
+    <!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span> contacta con  </span> nosotros </h1>
+
+    <div class="row">
+
+        <form action="">
+            <input type="text" placeholder="nombre" class="box">
+            <input type="email" placeholder="email" class="box">
+            <input type="number" placeholder="numero" class="box">
+            <textarea name="" class="box" placeholder="mensaje" id="" cols="30" rows="10"></textarea>
+            <input type="submit" value="enviar mensaje" class="btn">
+        </form>
+
+        <div class="image">
+             <img th:src="@{/img/descarga.svg}" >
+        </div>
+
+    </div>
+
+</section><br><br><br><br><br><br><br><br>
+<section th:replace="/index :: footeer"></section>
+
+
+
+<!--  
+<section class="footer">
+
+    <div class="box-container">
+
+        
+
+        <div class="box">
+            <h3>Shop Labs</h3>
+            <a href="#">Home</a>
+            <a href="#">Productos</a>
+            <a href="nosotros.html">Contactos</a>
+        </div>
+
+        <div class="box">
+            <h3>Localicaciones</h3>
+            <a href="#">Peru</a>
+            <a href="#">Lima</a>
+            <a href="#">Arequipa</a>
+            <a href="#">Cuzco</a>
+        </div>
+
+        <div class="box">
+            <h3>Datos de contacto</h3>
+            <a href="#">+5427--9934</a>
+            <a href="#">grupo3@gmail.com</a>
+            <a href="#">peru, arequipa- 948860423</a>
+            
+            <img th:src="@{/img/payment.png}"alt="" />
+        </div>
+
+    </div>
+
+    <div class="credit">©2022<span><b>GRUPO_3</b> </span>| todos los derechos reservados</div>
+
+</section>-->
+	<script type="text/javascript" th:src="@{/js/script.js}"></script>
+    
+</body>
+</html>
