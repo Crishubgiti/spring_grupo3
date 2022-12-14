@@ -3,11 +3,3 @@
 
 
 
-
-
-#Integrantes
-*Emerson Christian Quispe Apaza
-*
-*
-*
-*
